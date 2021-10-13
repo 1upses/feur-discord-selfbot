@@ -4,3 +4,7 @@
 # utilisation
 
  rentrez votre token dans la variable TOKEN, lancez le script, et profitez
+ 
+# pré-requis
+
+ installez cette fork de discord.py https://github.com/dolfies/discord.py-self
