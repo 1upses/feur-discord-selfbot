@@ -1,9 +1,24 @@
 import discord
 from discord.ext import commands
 import asyncio
+import random
 
-TOKEN = "enter your token here"
+TOKEN = ""
 client = commands.Bot(command_prefix=("."), self_bot=True)
+phrases = [
+    "feur",
+    "feur",
+    "feur",
+    "feur",
+    "feur",
+    "feur",
+    "feur",
+    "feur je crois",
+    "feur je pense",
+    "feur, mais je suis pas sûr",
+    "feur, mais à vérifier",
+    "feur sans doute",
+]
 
 @client.event
 async def on_ready():
@@ -29,7 +44,7 @@ async def on_message(message):
     if text.endswith('quoi'):
         async with message.channel.typing():
             await asyncio.sleep(0.1)
-        await message.channel.send('feur')
+        await message.channel.send(random.choice(phrases))
         return
 
 client.run(TOKEN)
