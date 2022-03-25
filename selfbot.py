@@ -2,9 +2,8 @@ import discord
 from discord.ext import commands
 import asyncio
 
-TOKEN = "enter yourt discord token here"
+TOKEN = "enter your token here"
 client = commands.Bot(command_prefix=("."), self_bot=True)
-ponctuation = ['?','!',' ','.',',']
 
 @client.event
 async def on_ready():
@@ -15,22 +14,21 @@ async def on_message(message):
     username = str(message.author).split('#')[0]
     message_content = str(message.content)
     channel = str(message.channel.name)
+    server = str(message.guild.name)
     
-    print(f'{username}: {message_content} ({channel})')
+    print(f'[{server}] -> ({channel}) {username}: {message_content}')
     
     if message.author == client.user:
         return
-    
-    text = message.content
-    text = text.lower()
+
+    text = message.content.lower()
 
     if 'quoi' in text:
-        for i in ponctuation:
-            text = text.replace(i,'')
+        text = text.rstrip(" ?!.,§;/:")
     
     if text.endswith('quoi'):
         async with message.channel.typing():
-            await asyncio.sleep(0.125)
+            await asyncio.sleep(0.1)
         await message.channel.send('feur')
         return
 
