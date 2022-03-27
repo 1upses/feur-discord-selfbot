@@ -13,11 +13,17 @@ phrases = [
     "feur",
     "feur",
     "feur",
+    "feur",
+    "feur",
+    "feur",
+    "feur",
+    "feur",
     "feur je crois",
     "feur je pense",
     "feur, mais je suis pas sûr",
     "feur, mais à vérifier",
     "feur sans doute",
+    "comme ça spontanément je dirais feur, mais information à vérifier"
 ]
 
 @client.event
